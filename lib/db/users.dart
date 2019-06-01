@@ -1,6 +1,6 @@
 import 'package:flut_it/models/user.dart';
 
-class Users {
+class UsersDB {
 
   static List<User> _users = List();
   static User _currentUser;

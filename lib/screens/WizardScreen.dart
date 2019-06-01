@@ -65,9 +65,9 @@ class _WizardScreenState extends State<WizardScreen> {
   }
 
   _getInClicked()  {
-    int id = Users.getCurrentUserCount()+1;
+    int id = UsersDB.getCurrentUserCount()+1;
     User user = User(id.toString(), username, selectedSkill);
-    Users.setCurrentUser(user);
+    UsersDB.setCurrentUser(user);
 //    Navigator.push(context, Route('/feed'));
   }
 
