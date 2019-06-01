@@ -50,7 +50,7 @@ class _WizardScreenState extends State<WizardScreen> {
                   ]
                 ),
                 RaisedButton(
-                  onPressed: _getInClicked(context),
+                  onPressed: _getInClicked,
                   color: Colors.blue,
                   child: Text(
                       'Get in!',
@@ -64,7 +64,7 @@ class _WizardScreenState extends State<WizardScreen> {
     );
   }
 
-  _getInClicked(BuildContext context)  {
+  _getInClicked()  {
     int id = Users.getCurrentUserCount()+1;
     User user = User(id.toString(), username, selectedSkill);
     Users.setCurrentUser(user);
