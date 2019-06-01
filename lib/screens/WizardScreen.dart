@@ -2,7 +2,6 @@ import 'package:flut_it/db/users.dart';
 import 'package:flut_it/models/user.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class WizardScreen extends StatefulWidget {
   @override
@@ -65,8 +64,9 @@ class _WizardScreenState extends State<WizardScreen> {
     );
   }
 
-  _getInClicked(BuildContext context) async {
-    User user = User("123456", username, selectedSkill);
+  _getInClicked(BuildContext context)  {
+    int id = Users.getCurrentUserCount()+1;
+    User user = User(id.toString(), username, selectedSkill);
     Users.setCurrentUser(user);
 //    Navigator.push(context, Route('/feed'));
   }
