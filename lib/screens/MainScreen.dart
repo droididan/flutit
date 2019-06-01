@@ -11,8 +11,8 @@ class Main extends StatefulWidget {
 class _MainState extends State<Main> {
   int _currentIndex = 0;
   final list = [
-    ProfileScreen(),
     FeedScreen(),
+    ProfileScreen()
   ];
 
   onTapBar(int value) {

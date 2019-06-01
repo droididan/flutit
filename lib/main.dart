@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 
 main() => runApp(MaterialApp(
       title: 'Flutit',
-      home: Main(),
+      home: WizardScreen(),
       routes: {
         '/main': (context) => Main(),
         '/wizard': (context) => WizardScreen(),
