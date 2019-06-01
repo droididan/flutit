@@ -1,3 +1,6 @@
+import 'package:flut_it/db/feed.dart';
+import 'package:flut_it/models/comment.dart';
+import 'package:flut_it/models/feed.dart';
 import 'package:flutter/material.dart';
 
 class FeedScreen extends StatelessWidget {
@@ -9,13 +12,23 @@ class FeedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FeedDB.addDefaultFeedItems();
+    List<Feed> list = FeedDB.feedItems;
+    List<FeedItem> items = List();
+    for (int i = 0; i < list.length; i++) {
+      Feed feed = list[i];
+      List<String> comments = List();
+      for (int j = 0; j < feed.comments.length; j++) {
+        Comment comment = feed.comments[j];
+        comments.add(comment.content);
+      }
+      items.add(FeedItem(comments.length > 0, comments, feed.title, feed.content, feed.authorId));
+    }
+
+
     return Container(
       child: ListView(
-        children: <Widget>[
-          FeedItem(true,comments),
-          FeedItem(false,comments),
-          FeedItem(true,comments),
-        ],
+        children: items
       ),
     );
   }
@@ -24,8 +37,11 @@ class FeedScreen extends StatelessWidget {
 class FeedItem extends StatelessWidget {
   final bool isAnswered;
   final List<String> comments;
+  final String title;
+  final String content;
+  final String authorName;
 
-  FeedItem(this.isAnswered, this.comments);
+  FeedItem(this.isAnswered, this.comments, this.title, this.content, this.authorName);
 
   @override
   Widget build(BuildContext context) {
@@ -59,13 +75,16 @@ class FeedItem extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'How do I compile iOS project',
+                  title,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             SizedBox(height: 12.0),
-            Text('I\'ve tried to compile iOS project and failed, how can...'),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15.0),
+              child: Text(content),
+            ),
             SizedBox(height: 18),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -91,7 +110,7 @@ class FeedItem extends StatelessWidget {
                       FlatButton(
                         onPressed: () {},
                         splashColor: Colors.blueAccent,
-                        child: Text('Commants'),
+                        child: Text('Comments'),
                       ),
                     ],
                   ),

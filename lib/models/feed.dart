@@ -19,7 +19,7 @@ class Feed {
   String get title => _title;
   String get content => _content;
   String get authorId => _authorId;
-  List<Comment> get tokens => _comments;
+  List<Comment> get comments => _comments;
   List<String> get likes => _likes;
 
   addComment(Comment comment) {

@@ -31,13 +31,9 @@ class FeedDB {
         "Any help please?",
         "Iron Man"
     );
-    feed2.addComment(Comment(
-        "Superman",
-        "Check this link: https://medium.com/flutter-community/flutter-listview-and-scrollphysics-a-detailed-look-7f0912df2754"
-    ));
 
     Feed feed3 = Feed(
-        "App is crashing while running on iPhone XS, what should I do?",
+        "App is crashing while running on iPhone...",
         "When defining the firebase auth, and then pressing on the relevant gmail account, it crashes. Any idea?",
         "Wolverin"
     );
