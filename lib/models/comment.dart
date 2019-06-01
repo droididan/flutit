@@ -8,4 +8,10 @@ class Comment {
   String get content => _content;
   String get authorId => _authorId;
 
+  Comment(String authorId, String content) {
+    _authorId = authorId;
+    _content = content;
+    _timestamp = DateTime.now();
+  }
+
 }
