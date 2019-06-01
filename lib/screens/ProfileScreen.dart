@@ -1,3 +1,4 @@
+import 'package:flut_it/db/users.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class ProfileScreen extends StatelessWidget {
               backgroundColor: Colors.greenAccent,
               child: Image.asset("lib/assets/images/profile.png"),
             ),
-            Text("Flutter Programmer", style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),)
+            Text(UsersDB.currentUser.name != "" ? UsersDB.currentUser.name : "Flutter Programmer", style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),)
           ],)
 
     );

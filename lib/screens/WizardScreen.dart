@@ -23,6 +23,9 @@ class _WizardScreenState extends State<WizardScreen> {
             child: Column(
               children: [
                 TextField(
+                  onChanged: (text) {
+                    username = text;
+                  },
                   decoration: InputDecoration(
                     hintText: "Enter your name",
                     icon: Icon(Icons.person),
