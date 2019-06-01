@@ -68,7 +68,7 @@ class _WizardScreenState extends State<WizardScreen> {
     int id = UsersDB.getCurrentUserCount()+1;
     User user = User(id.toString(), username, selectedSkill);
     UsersDB.setCurrentUser(user);
-//    Navigator.push(context, Route('/feed'));
+    Navigator.of(context).popAndPushNamed('/feed');
   }
 
 }
