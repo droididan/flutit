@@ -15,6 +15,8 @@ class _SplashState extends State<SplashScreen> {
     super.initState();
     _timer = Timer(Duration(seconds: 3), () {
 
+      // todo wrap if auth
+      Navigator.of(context).popAndPushNamed('/wizard');
     });
   }
 
@@ -33,6 +35,12 @@ class _SplashState extends State<SplashScreen> {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _timer.cancel();
   }
 }
 

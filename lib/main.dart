@@ -1,6 +1,6 @@
 import 'package:flut_it/screens/ComposeScreen.dart';
 import 'package:flut_it/screens/FeedScreen.dart';
-import 'package:flut_it/screens/Main.dart';
+import 'package:flut_it/screens/MainScreen.dart';
 import 'package:flut_it/screens/ProfileScreen.dart';
 import 'package:flut_it/screens/SplashScreen.dart';
 import 'package:flut_it/screens/WizardScreen.dart';
